@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Matrícula</title>
+</head>
+<body>
+    <h1>Buscar Matrícula</h1>
+    
+    <form method="POST" action="/">
+        <label for="matricula">Ingresa la parte numérica de la matrícula:</label><br>
+        <input type="text" id="matricula" name="matricula" required><br><br>
+        <input type="submit" value="Buscar">
+    </form>
+
+    {% if resultado %}
+        <h2>Resultados para la matrícula:</h2>
+        <ul>
+            <li><strong>Nombre EP:</strong> {{ resultado.nombre_ep }}</li>
+            <li><strong>Armador:</strong> {{ resultado.armador }}</li>
+            <li><strong>Permiso:</strong> {{ resultado.permiso }}</li>
+            <li><strong>Estado de Permiso:</strong> {{ resultado.estado_permiso }}</li>
+            <li><strong>Nominación:</strong> {{ resultado.nominacion }}</li>
+            <li><strong>Bodega m3:</strong> {{ resultado.bodega_m3 }}</li>
+            <li><strong>Bodega tm:</strong> {{ resultado.bodega_tm }}</li>
+            <li><strong>Baliza:</strong> {{ resultado.baliza }}</li>
+            <li><strong>Precinto:</strong> {{ resultado.precinto }}</li>
+        </ul>
+    {% endif %}
+    
+</body>
+</html>
